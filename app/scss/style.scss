@@ -1,0 +1,14 @@
+@import 'reset';
+@import 'mixin';
+@import 'fonts';
+@import 'vars';
+@import 'global';
+@import 'libs';
+
+@import './components/header';
+@import './components/calc-price';
+@import './components/services';
+@import './components/scheme';
+@import './components/footer';
+
+@import 'media';

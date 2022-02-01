@@ -1,0 +1,10 @@
+// @include font-woff(Roboto-Light, Roboto-Light, 300, normal);
+@include font-woff("Stolzl-Light", "../fonts/Stolzl-Light", 300, normal);
+@include font-woff2("Stolzl-Light", "../fonts/Stolzl-Light", 300, normal);
+@include font-woff("Stolzl-Regular", "../fonts/Stolzl-Regular", 400, normal);
+@include font-woff2("Stolzl-Regular", "../fonts/Stolzl-Regular", 400, normal);
+@include font-woff("Stolzl-Medium", "../fonts/Stolzl-Medium", 500, normal);
+@include font-woff2("Stolzl-Medium", "../fonts/Stolzl-Medium", 500, normal);
+@include font-woff("Stolzl-Bold", "../fonts/Stolzl-Bold", 700, normal);
+@include font-woff2("Stolzl-Bold", "../fonts/Stolzl-Bold", 700, normal);
+// @mixin font-woff($font-family, $url, $weight, $style);

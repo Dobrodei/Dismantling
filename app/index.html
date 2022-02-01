@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  @include('html/header.html')
+  <main class="main">
+    <h1 class="sr-only">
+      Страница по демонтажным работам
+    </h1>
+    @include('html/calc-price.html')
+    @include('html/services.html')
+    @include('html/scheme.html')
+  </main>
+  @include('html/footer.html')
+
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
