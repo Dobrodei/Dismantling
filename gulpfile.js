@@ -64,6 +64,7 @@ function htmlInclude() {
 function scripts() {
   return src([
       'node_modules/jquery/dist/jquery.js',
+      'node_modules/swiper/swiper-bundle.js',
       'app/js/main.js'
     ])
     .pipe(concat('main.min.js'))

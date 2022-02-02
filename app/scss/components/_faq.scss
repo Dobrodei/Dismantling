@@ -3,12 +3,14 @@
 
   &__container {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   &__left {
     max-width: 600px;
     width: 100%;
+    margin-right: 20px;
   }
 
   &__title {
@@ -65,13 +67,8 @@
     }
   }
 
-  &__list {
-    max-width: 700px;
-    width: 100%;
-
-    @include tablet {
-      max-width: 100%;
-    }
+  &__right {
+    padding-top: 35px;
   }
 
   &__item {
@@ -137,8 +134,10 @@
     }
 
     &--active {
-      .faq-procedure__btn {
-        transform: rotate(180deg);
+      .faq__btn {
+        &::after {
+          transform: rotate(0deg);
+        }
       }
     }
   }
@@ -168,20 +167,13 @@
   }
 
   &__text {
-    // max-width: 570px;
-    // width: 100%;
+    max-width: 480px;
     padding: 10px 20px;
-    padding-right: 10px;
+    padding-right: 15px;
     background-color: #F5F1FF;
     border-radius: 30px;
     margin-top: 20px;
     display: none;
-
-    p {
-      &:not(:last-child) {
-        margin-bottom: 15px;
-      }
-    }
 
     &--active {
       display: block;
@@ -191,5 +183,16 @@
   &__answer {
     font-size: 18px;
     font-weight: 600;
+  }
+
+  &__body {
+    font-weight: 300;
+    font-size: 18px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
   }
 }

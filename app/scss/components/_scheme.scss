@@ -1,10 +1,14 @@
 .scheme {
-  padding-top: 50px;
-  padding-bottom: 66px;
-  clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 3%);
-  background-color: #373738;
+  &__wrapper {
+    padding-top: 50px;
+    padding-bottom: 66px;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%, 0 0, 50% 3%);
+    background-color: #373738;
+  }
 
-  &__title {
+  &__title {}
+
+  &__subtitle {
     font-size: 58px;
     color: $color-white;
     margin-bottom: 28px;
@@ -34,7 +38,7 @@
     height: 100%;
     padding: 8px;
     padding-bottom: 10px;
-    border: 1px dashed #6C6C6C;
+    border: 2px dashed #6C6C6C;
     border-radius: 30px;
 
     &--online {
@@ -115,7 +119,7 @@
   &__text {
     max-width: 283px;
     margin: 0 auto;
-    padding-left: 3px;
+    padding-left: 12px;
     color: #FFFFFF;
     background-image: url('../images/icons/benefit.svg');
     background-size: 11px 5px;
