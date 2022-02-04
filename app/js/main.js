@@ -13,14 +13,14 @@ $(function () {
     });
   })
 
-  const swiper = new Swiper('.swiper', {
-    slidesPerView: 4,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  });
+  // const otherJob = new Swiper('.other-job__slider', {
+  //   slidesPerView: 4,
+  //   spaceBetween: 10,
+  //   navigation: {
+  //     nextEl: '.swiper-button-next',
+  //     prevEl: '.swiper-button-prev',
+  //   },
+  // });
 
   $('.other-job__tab').on('click', function (e) {
     e.preventDefault();
@@ -128,9 +128,29 @@ $(function () {
     slidesPerView: 3,
     spaceBetween: 12,
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.work-process__arrow--next',
+      prevEl: '.work-process__arrow--prev',
     },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      500: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 25,
+      },
+      1000: {
+        spaceBetween: 20,
+      },
+      1200: {
+        spaceBetween: 14,
+      }
+    }
   });
 
   const reviewSlider = new Swiper('.reviews__slider-container', {
@@ -142,19 +162,70 @@ $(function () {
       prevEl: '.swiper-button-prev',
     },
   });
-  // var tileSlider = document.querySelectorAll('.slider');
-  // tileSlider.forEach(function (n) {
-  //   var mySwiper = new Swiper(n.querySelector('.swiper'), {
-  //     slidesPerView: 'auto',
-  //     spaceBetween: 24,
-  //     navigation: {
-  //       nextEl: n.querySelector('.slider-bullets__btn--next'),
-  //       prevEl: n.querySelector('.slider-bullets__btn--prev'),
-  //     },
-  //     scrollbar: {
-  //       el: '.swiper-scrollbar',
-  //       draggable: true,
-  //     },
-  //   });
-  // });
+
+
+  $('.modal-toggle').on('click', function (e) {
+    e.preventDefault();
+    $('.modal').toggleClass('modal--visible');
+  });
+
+  const sliderThumbs = new Swiper('.slider__thumbs .swiper-container', {
+    direction: 'vertical',
+    slidesPerView: 4,
+    spaceBetween: 30,
+    breakpoints: {
+      0: {
+        direction: 'horizontal',
+      },
+      770: {
+        direction: 'vertical',
+      }
+    }
+  });
+
+  const sliderImages = new Swiper('.slider__images .swiper-container', {
+    direction: 'vertical',
+    slidesPerView: 1,
+    spaceBetween: 10,
+    mousewheel: true,
+    grabCursor: true,
+    thumbs: {
+      swiper: sliderThumbs
+    },
+    breakpoints: {
+      0: {
+        direction: 'horizontal',
+      },
+      768: {
+        direction: 'vertical',
+      }
+    }
+  });
+  let otherJob = document.querySelectorAll('.other-job__item');
+  otherJob.forEach(function (n) {
+    var mySwiper = new Swiper(n.querySelector('.swiper'), {
+      slidesPerView: 4,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: n.querySelector('.swiper-button-next'),
+        prevEl: n.querySelector('.swiper-button-prev'),
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1000: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+        1200: {
+          slidesPerView: 4,
+        }
+      }
+    });
+  });
 })

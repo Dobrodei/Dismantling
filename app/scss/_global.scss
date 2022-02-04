@@ -48,6 +48,18 @@ body {
       transform: translateX(-50%);
     }
   }
+
+  @include tablet {
+    font-size: 38px;
+  }
+
+  @include small-tablet {
+    font-size: 20px;
+  }
+
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 
