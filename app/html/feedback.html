@@ -1,12 +1,14 @@
 <section class="feedback" style="background-image: url('./images/feedback-bg.jpg');">
   <div class="container feedback__container">
     <div class="feedback__left">
-      <h2 class="feedback__title title">
-        У Вас уже есть смета на демонтажные и монтажные работы?
-      </h2>
-      <p class="feedback__descr">
-        В 90% случаев мы предлогаем меньшую стоимость и без потере в качетве
-      </p>
+      <div class="feedback__box">
+        <h2 class="feedback__title title">
+          У Вас уже есть смета на демонтажные и монтажные работы?
+        </h2>
+        <p class="feedback__descr">
+          В 90% случаев мы предлогаем меньшую стоимость и без потере в качетве
+        </p>
+      </div>
       <ul class="feedback__list">
         <li class="feedback__item">
           <p class="feedback__benefit">
@@ -34,9 +36,10 @@
         <p class="form__descr">
           И мы вышлем вам расчеты уже через 5 минут
         </p>
-        <label class="form__label" for="">
-          <span class="sr-only">Прикрепите файл</span>
-          <input class="form__input" type="file" placeholder="Прикрепить файл">
+        <label class="form__label form__label--file">
+          <span class="sr-only">Поле для прикрепления файла</span>
+          <div class="file-select-button">Прикрепить файл</div>
+          <input type="file" name="file-upload-input" id="file-upload-input" placeholder="Прикрепите файл">
         </label>
         <label class="form__label" for="">
           <span class="sr-only">Введите номер телефона</span>

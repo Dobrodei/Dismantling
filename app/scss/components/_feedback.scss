@@ -1,14 +1,37 @@
 .feedback {
-  padding-top: 130px;
-  padding-bottom: 45px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
-  position: relative;
 
   &__container {
     display: flex;
+    padding-top: 130px;
+    padding-bottom: 45px;
+    position: relative;
+    z-index: 1;
+
+    @include large {
+      padding-top: 184px;
+      padding-bottom: 54px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      padding-top: 97px;
+      padding-bottom: 18px;
+    }
+
+    @include small-tablet {
+      flex-direction: column;
+      padding-top: 32px;
+      padding-bottom: 18px;
+    }
+
+    @include mobile {
+      padding: 20px;
+      padding-bottom: 15px;
+    }
   }
 
   &__left {
@@ -19,18 +42,67 @@
     margin-right: 15px;
     position: relative;
     z-index: 1;
+
+    @include large {
+      max-width: 295px;
+    }
+
+    @include tablet {
+      max-width: 100%;
+      flex-direction: row;
+      margin-bottom: 63px;
+      margin-right: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 174px;
+    }
+  }
+
+  &__box {
+    @include tablet {
+      max-width: 300px;
+      margin-right: 20px;
+    }
+
+    @include small-tablet {
+      max-width: 210px;
+      margin-right: 20px;
+    }
+
+    @include mobile {
+      max-width: 210px;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
   }
 
   &__title {
     font-size: 34px;
     text-align: left;
     margin-bottom: 11px;
+
+    @include large {
+      font-size: 22px;
+      margin-bottom: 37px;
+    }
+
+    @include small-tablet {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
   }
 
   &__descr {
     font-size: 20px;
     padding-right: 30px;
     margin-bottom: auto;
+
+    @include large {
+      font-size: 16px;
+    }
   }
 
   &__list {
@@ -47,12 +119,20 @@
       left: -20%;
       top: -50%;
       z-index: -1;
+
+      @include tablet {
+        display: none;
+      }
     }
   }
 
   &__item {
     &:not(:last-child) {
       margin-bottom: 10px;
+
+      @include tablet {
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -62,6 +142,22 @@
     background-position: left center;
     background-size: 12px 8px;
     background-repeat: no-repeat;
+
+    @include small-tablet {
+      font-size: 8px;
+    }
+  }
+
+  &__right {
+    max-width: 420px;
+
+    @include small-tablet {
+      max-width: 220px;
+    }
+
+    @include mobile {
+      align-self: center;
+    }
   }
 
   &__form {
@@ -71,17 +167,45 @@
   }
 
   &__master {
-    width: 21%;
-    // display: flex;
+    width: 38%;
+    display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     position: absolute;
     position: absolute;
     top: 4%;
-    right: 21%;
+    right: -1%;
     bottom: 0;
-    z-index: 1;
-    display: none;
+    z-index: -1;
+
+    @include large {
+      width: 27%;
+      top: 37%;
+      right: 0%;
+    }
+
+    @include tablet {
+      width: 35%;
+      top: 41%;
+      right: 4%;
+      bottom: 4%;
+    }
+
+    @include small-tablet {
+      max-width: 235px;
+      width: 100%;
+      height: 289px;
+      right: 0%;
+      top: 47%;
+    }
+
+    @include mobile {
+      max-width: 146px;
+      height: 187px;
+      top: 31%;
+      left: 56%;
+      transform: translateX(-50%);
+    }
   }
 
   &__img {
@@ -102,21 +226,51 @@
   &__name {
     display: inline-block;
     max-width: 285px;
+    padding: 10px;
     text-align: center;
     border-radius: 30px;
     background-color: $color-white;
     margin-bottom: 50px;
 
     span {
-      font-weight: 500;
+      display: block;
+      font-weight: 600;
       font-size: 20px;
       margin-bottom: 10px;
+
+      @include large {
+        font-size: 16px;
+      }
+
+      @include small-tablet {
+        font-size: 10px;
+        margin-bottom: 5px;
+      }
+    }
+
+    @include large {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    @include small-tablet {
+      max-width: 170px;
+      font-size: 8px;
+      margin: 0 auto;
+    }
+
+    @include mobile {
+      max-width: 125px;
+      text-align: start;
+      background-color: transparent;
+      position: absolute;
+      top: 24px;
+      left: -80px;
     }
   }
 }
 
 .form {
-  max-width: 420px;
   width: 100%;
   padding: 20px 25px;
   text-align: center;
@@ -126,11 +280,21 @@
   &__title {
     font-size: 20px;
     margin-bottom: 14px;
+
+    @include small-tablet {
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
   }
 
   &__descr {
     font-size: 15px;
     margin-bottom: 28px;
+
+    @include small-tablet {
+      font-size: 9px;
+      margin-bottom: 13px;
+    }
   }
 
   &__label {
@@ -138,14 +302,62 @@
     max-width: 320px;
     width: 100%;
     margin-bottom: 15px;
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+
+    input[type="file"] {
+      display: none
+    }
+
+    &--file {
+      padding: 10px;
+      border: 1px solid $color-dark;
+      border-radius: 5px;
+      color: #6C6C6C;
+
+      &::after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-image: url('../images/icons/file-icon.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 9px;
+        right: 16px;
+
+        @include small-tablet {
+          width: 13px;
+          height: 13px;
+          right: 12px;
+        }
+      }
+    }
+
+    @include small-tablet {
+      font-size: 11px;
+    }
   }
 
   &__input {
     width: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid $color-dark;
+    border-radius: 5px;
   }
 
   &__btn {
+    font-size: 18px;
+    padding: 9px 50px;
     margin-bottom: 20px;
+
+    @include small-tablet {
+      padding: 9px;
+    }
   }
 
   &__apply {
@@ -172,7 +384,7 @@
   }
 
   .form__check:checked+.form__checkbox {
-    background-image: url(../images/icons/arrow-right.svg);
+    background-image: url(../images/icons/arrow-apply.svg);
     border-color: $color-dark;
   }
 
@@ -181,6 +393,7 @@
     height: 10px;
     border: 1px solid $color-dark;
     background-color: $color-grey;
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
@@ -190,6 +403,12 @@
   &__text {
     font-weight: 300;
     font-size: 9px;
+
+    @include small-tablet {
+      font-size: 7px;
+      text-align: left;
+      padding-left: 20px;
+    }
   }
 
   &__contacts {
@@ -201,6 +420,14 @@
       font-weight: 300;
       text-transform: uppercase;
       margin-bottom: 14px;
+
+      @include small-tablet {
+        margin-bottom: 9px;
+      }
+    }
+
+    @include small-tablet {
+      font-size: 12px;
     }
   }
 }

@@ -41,11 +41,17 @@ body {
       content: "";
       width: 183px;
       height: 5px;
+      border-radius: 5px;
       background-color: $color-orange;
       position: absolute;
       left: 50%;
       bottom: -28px;
       transform: translateX(-50%);
+
+      @include mobile {
+        width: 100px;
+        bottom: -20px;
+      }
     }
   }
 
@@ -61,7 +67,6 @@ body {
     font-size: 18px;
   }
 }
-
 
 .btn {
   display: inline-block;
