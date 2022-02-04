@@ -24,6 +24,7 @@
   &__container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 40px 50px;
     padding-bottom: 20px;
     background-color: #373738;
@@ -35,6 +36,7 @@
     align-self: flex-start;
     max-width: 490px;
     width: 100%;
+    margin-right: 50px;
   }
 
   &__text {
@@ -48,7 +50,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 40px;
     position: relative;
 
     &::before {
@@ -85,12 +86,64 @@
   }
 
   &__right {
-    width: 100%;
+    flex-grow: 1;
+    min-width: 0;
+    position: relative;
   }
 
   &__box {
-    max-width: 173px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 11px 4px;
     background-color: #F5F1FF;
+    border-radius: 15px;
     min-height: 140px;
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--master {
+      background-image: url('../images/icons/man.svg');
+    }
+
+    &--tool {
+      background-image: url('../images/icons/tool.svg');
+    }
+
+    &--foreman {
+      background-image: url('../images/icons/foreman.svg');
+    }
+
+    &--camera {
+      background-image: url('../images/icons/camera.svg');
+    }
+
+    &--clean {
+      background-image: url('../images/icons/clean.svg');
+    }
+
+    &--law {
+      background-image: url('../images/icons/law.svg');
+    }
+
+    &--urn {
+      background-image: url('../images/icons/urn.svg');
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: $color-white;
+  }
+
+  .swiper-button-prev {
+    left: -40px;
+  }
+
+  .swiper-button-next {
+    right: -35px
   }
 }

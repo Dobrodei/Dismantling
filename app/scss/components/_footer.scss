@@ -7,11 +7,23 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include large {
+      flex-wrap: wrap;
+    }
   }
 
   &__left {
     max-width: 260px;
     margin-right: 15px;
+
+    @include large {
+      order: -1;
+    }
+
+    @include small-tablet {
+      max-width: 205px;
+    }
   }
 
   &__box {
@@ -28,6 +40,10 @@
     line-height: 1.4;
     color: $color-white;
     margin-bottom: 24px;
+
+    @include small-tablet {
+      font-size: 9px;
+    }
   }
 
   &__ref {
@@ -43,6 +59,10 @@
 
     &:not(:last-child) {
       margin-bottom: 15px;
+
+      @include small-tablet {
+        margin-bottom: 10px;
+      }
     }
 
     &--request {
@@ -52,12 +72,42 @@
     &--calc {
       background-image: url('../images/icons/calc-circle.svg');
     }
+
+    @include small-tablet {
+      font-size: 12px;
+      background-size: 15%;
+      padding-left: 43px;
+    }
   }
 
   &__middle {
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-gap: 30px;
+    margin-right: 15px;
+
+    @include large {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 30px;
+      justify-content: space-between;
+    }
+
+    @include small-tablet {
+      grid-template-columns: repeat(2, auto);
+    }
+
+    @include mobile {
+      grid-gap: 15px;
+    }
+  }
+
+  &__inner {
+    &:last-child {
+      @include small-tablet {
+        grid-column: span 2;
+      }
+    }
   }
 
   &__list {
@@ -84,16 +134,32 @@
     }
   }
 
+  &__item {
+    &:not(:last-child) {
+      @include small-tablet {
+        margin-bottom: 15px !important;
+      }
+    }
+  }
+
   &__head {
     display: inline-block;
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 16px;
+
+    @include small-tablet {
+      font-size: 12px;
+    }
   }
 
   &__link,
   &__benefit {
     font-size: 15px;
+
+    @include small-tablet {
+      font-size: 10px;
+    }
   }
 
   &__benefit {
@@ -110,9 +176,24 @@
     .footer__head~* {
       &:not(:last-child) {
         margin-bottom: 16px;
+
+        @include small-tablet {
+          display: none;
+        }
       }
     }
+
+    .footer__head {
+      @include small-tablet {
+        display: none;
+      }
+    }
+
+    @include large {
+      order: -1;
+    }
   }
+
 
   .footer__text {
     font-size: 14px;
@@ -164,6 +245,11 @@
   &__item {
     &:not(:last-child) {
       margin-right: 20px;
+
+      @include small-tablet {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
     }
   }
 
@@ -190,5 +276,9 @@
     &--youtube {
       background-image: url('../images/icons/youtube.svg');
     }
+  }
+
+  @include small-tablet {
+    flex-direction: column;
   }
 }
