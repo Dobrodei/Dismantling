@@ -13,14 +13,6 @@ $(function () {
     });
   })
 
-  // const otherJob = new Swiper('.other-job__slider', {
-  //   slidesPerView: 4,
-  //   spaceBetween: 10,
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  // });
 
   $('.other-job__tab').on('click', function (e) {
     e.preventDefault();
@@ -44,20 +36,21 @@ $(function () {
     var swiperBig = new Swiper(".portfolio__swiper", {
       slidesPerView: 1,
       spaceBetween: 5,
+      watchSlidesProgress: true,
       updateOnWindowResize: !0,
       navigation: {
         nextEl: "[data-work-example] .swiper-button-next",
         prevEl: "[data-work-example] .swiper-button-prev",
       },
-      pagination: {
-        el: ".work-example__swiper-pagination",
-        clickable: !0,
-      },
       breakpoints: {
-        768: {
+        500: {
           slidesPerView: 2,
-          spaceBetween: 19,
+          spaceBetween: 5,
           updateOnWindowResize: !0,
+        },
+        1000: {
+          slidesPerView: 2,
+          spaceBetween: 20,
         },
       },
     });
@@ -72,9 +65,12 @@ $(function () {
       });
   }
 
+  swiperBigFunc()
+
   function swiperBigFunc() {
     var e = $(".portfolio__item.swiper-slide").eq(0).width();
-    $(".portfolio__inner").css("width", e);
+    console.log(e);
+    return $(".portfolio__inner").css("width", e);
   }
   if (
     ($(".switch-slide__before").addClass("switch-slide__before--active"),
@@ -92,17 +88,19 @@ $(function () {
       centeredSlides: !0,
       loop: !0,
       slideToClickedSlide: !0,
-      navigation: {
-        nextEl: "[data-work-example-mini] .swiper-button-next",
-        prevEl: "[data-work-example-mini] .swiper-button-prev",
-      },
       pagination: {
-        el: ".work-example-mini__swiper-pagination",
+        el: ".swiper-pagination",
         clickable: !0,
       },
       breakpoints: {
-        600: {
-          spaceBetween: 10,
+        320: {
+          slidesPerView: 3,
+        },
+        500: {
+          slidesPerView: 5,
+        },
+        1000: {
+          slidesPerView: 7,
         },
       },
     });
@@ -154,13 +152,29 @@ $(function () {
   });
 
   const reviewSlider = new Swiper('.reviews__slider-container', {
-    slidesPerView: 3,
+    slidesPerView: 2,
     spaceBetween: 20,
-    loop: true,
+    watchSlidesProgress: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
+    breakpoints: {
+      0: {
+        direction: 'horizontal',
+      },
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 40,
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 80,
+      },
+      1000: {
+        slidesPerView: 2,
+      },
+    }
   });
 
 
@@ -228,23 +242,7 @@ $(function () {
       }
     });
   });
-  // $('input').change(function () {
-  //   var label = $(this).parent().find('span');
-  //   if (typeof (this.files) != 'undefined') { // fucking IE      
-  //     if (this.files.length == 0) {
-  //       label.removeClass('withFile').text(label.data('default'));
-  //     } else {
-  //       var file = this.files[0];
-  //       var name = file.name;
-  //       var size = (file.size / 1048576).toFixed(3); //size in mb 
-  //       label.addClass('withFile').text(name + ' (' + size + 'mb)');
-  //     }
-  //   } else {
-  //     var name = this.value.split("\\");
-  //     label.addClass('withFile').text(name[name.length - 1]);
-  //   }
-  //   return false;
-  // });
+
   let fileInput = document.getElementById("file-upload-input");
   let fileSelect = document.getElementsByClassName("form__label")[0];
   fileSelect.onclick = function () {
@@ -255,5 +253,4 @@ $(function () {
     let selectName = document.getElementsByClassName("file-select-button")[0];
     selectName.innerText = filename;
   }
-
 })

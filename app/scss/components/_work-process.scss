@@ -282,6 +282,10 @@
       right: -23px;
     }
   }
+
+  @include small-tablet {
+    padding-top: 30px;
+  }
 }
 
 .modal {
@@ -383,11 +387,6 @@
   margin-bottom: 0;
 }
 
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
 .slider {
   &__flex {
     display: flex;
@@ -438,6 +437,11 @@
     @include mobile {
       height: 320px;
     }
+  }
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
   }
 
   &__image {

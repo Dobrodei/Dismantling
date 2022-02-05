@@ -79,7 +79,7 @@
     }
 
     @include mobile {
-      padding: 10px 14px;
+      padding: 7px 12px;
       font-size: 7px;
     }
   }
@@ -198,5 +198,9 @@
 
   @include tablet {
     padding: 40px 0;
+  }
+
+  @include small-tablet {
+    padding-top: 0;
   }
 }
