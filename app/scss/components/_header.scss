@@ -223,11 +223,45 @@
     width: 100%;
     padding: 2px 0;
     padding-left: 12px;
-    border: 1px solid $color-orange;
+    border: 1px solid transparent;
     text-transform: uppercase;
+
+    &--active {
+      border-color: $color-orange;
+    }
+
+    &--menu {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background-image: url('../images/icons/arr-header.svg');
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 3px;
+        right: 30px;
+        transition: transform 0.3s ease-in;
+        display: none;
+
+        @include small-tablet {
+          display: block;
+        }
+      }
+    }
+
+    @include small-tablet {
+      width: auto;
+      padding-left: 7px;
+      padding-right: 50px;
+    }
   }
 
   @include small-tablet {
+    max-width: 100%;
     margin-bottom: 20px;
   }
 }
@@ -243,7 +277,14 @@
     justify-content: center;
 
     @include small-tablet {
+      display: none;
       flex-direction: column;
+      padding-left: 7px;
+      margin-top: 10px;
+
+      &--active {
+        display: block;
+      }
     }
   }
 
@@ -275,17 +316,6 @@
     color: $color-white;
     position: relative;
 
-    // &:hover {
-    //   &::before {
-    //     transform: rotate(180deg);
-    //   }
-
-    //   .dropdown {
-    //     opacity: 1;
-    //     visibility: visible;
-    //   }
-    // }
-
     &:not(:last-child) {
       &::after {
         content: "";
@@ -304,7 +334,7 @@
       }
 
       @include small-tablet {
-        margin-bottom: 10px;
+        padding-left: 0;
       }
     }
 
@@ -339,6 +369,10 @@
   &__item {
     &:not(:last-child) {
       margin-bottom: 25px;
+
+      @include small-tablet {
+        margin-bottom: 10px;
+      }
     }
   }
 
@@ -356,6 +390,9 @@
 
   @include small-tablet {
     position: relative;
+    padding: 0;
+    padding-left: 20px;
+    border-top: none;
   }
 
   // .dropdown:hover .dropdown-content:not(.show) {
@@ -403,9 +440,8 @@
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
-    padding-top: 100px;
-    padding-left: 20px;
-    padding-bottom: 30px;
+    padding: 100px 20px;
+    padding-bottom: 20px;
     overflow: auto;
   }
 

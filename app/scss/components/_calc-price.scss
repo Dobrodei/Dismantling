@@ -182,7 +182,6 @@
       content: "";
       width: 37px;
       height: 13px;
-      background-image: url('../images/icons/calc-pricebtn.svg');
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
@@ -197,12 +196,15 @@
     }
 
     &::before {
-      left: 15px;
+      background-image: url('../images/icons/calc-arrowr.svg');
+      left: 22px;
+      animation: animation 1s linear infinite;
     }
 
     &::after {
-      right: 15px;
-      transform: translateY(-43%) rotate(180deg);
+      right: 20px;
+      background-image: url('../images/icons/calc-arrowl.svg');
+      animation: animation2 1s linear infinite;
     }
 
     @include tablet {
@@ -212,6 +214,18 @@
     @include small-tablet {
       font-size: 16px;
       padding: 20px 50px;
+    }
+
+    @keyframes animation {
+      to {
+        transform: translate(-30%, -50%);
+      }
+    }
+
+    @keyframes animation2 {
+      to {
+        transform: translate(30%, -50%);
+      }
     }
   }
 }

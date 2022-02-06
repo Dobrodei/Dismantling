@@ -1,7 +1,14 @@
 $(function () {
-  $('.submenu__btn').on('click', function () {
-    $('.dropdown').toggleClass('dropdown--active');
-  });
+  $('.nav__link--menu').on('click', function (e) {
+    e.preventDefault
+    $('.submenu__list').toggleClass('submenu__list--active')
+  })
+  const submenuBtn = document.querySelectorAll('.submenu__btn')
+  submenuBtn.forEach((el) => {
+    el.addEventListener('click', () => {
+      el.nextElementSibling.classList.toggle('dropdown--active')
+    })
+  })
 
   const headers = document.querySelectorAll(".faq__head");
 
