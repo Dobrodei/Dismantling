@@ -295,9 +295,6 @@
 
     @include tablet {
       width: 100%;
-    }
-
-    @include small-tablet {
       flex-direction: column-reverse;
     }
   }
@@ -312,7 +309,7 @@
       border: 3px solid $color-orange;
     }
 
-    @include small-tablet {
+    @include tablet {
       height: 100px;
       width: 100%;
       margin: 0;
@@ -324,16 +321,15 @@
   }
 
   &__images {
+    margin: 0 auto;
     overflow: hidden;
     height: 882px;
 
     @include tablet {
-      width: 100%;
+      height: 450px;
+      margin-bottom: 20px;
     }
 
-    @include small-tablet {
-      margin-bottom: 25px;
-    }
 
     @include mobile {
       height: 320px;

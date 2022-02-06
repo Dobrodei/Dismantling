@@ -1,4 +1,8 @@
 $(function () {
+  $('.submenu__btn').on('click', function () {
+    $('.dropdown').toggleClass('dropdown--active');
+  });
+
   const headers = document.querySelectorAll(".faq__head");
 
   headers.forEach(function (item) {
@@ -182,15 +186,22 @@ $(function () {
     $('.modal').toggleClass('modal--visible');
   });
 
+  $('.toggle').on('click', function (e) {
+    $('.body').toggleClass('body--hidden')
+    $('.burger-btn').toggleClass('burger-btn--active')
+    $('.header-menu').toggleClass('header-menu--visible');
+  });
+
   const sliderThumbs = new Swiper('.slider__thumbs .swiper-container', {
     direction: 'vertical',
     slidesPerView: 4,
     spaceBetween: 30,
     breakpoints: {
-      0: {
+      320: {
         direction: 'horizontal',
+        spaceBetween: 10,
       },
-      770: {
+      1000: {
         direction: 'vertical',
       }
     }
@@ -204,14 +215,6 @@ $(function () {
     grabCursor: true,
     thumbs: {
       swiper: sliderThumbs
-    },
-    breakpoints: {
-      0: {
-        direction: 'horizontal',
-      },
-      768: {
-        direction: 'vertical',
-      }
     }
   });
   let otherJob = document.querySelectorAll('.other-job__item');
@@ -243,7 +246,7 @@ $(function () {
   });
 
   let fileInput = document.getElementById("file-upload-input");
-  let fileSelect = document.getElementsByClassName("form__label")[0];
+  let fileSelect = document.getElementsByClassName("form__label--file")[0];
   fileSelect.onclick = function () {
     fileInput.click();
   }
@@ -252,7 +255,6 @@ $(function () {
     let selectName = document.getElementsByClassName("file-select-button")[0];
     selectName.innerText = filename;
   }
-  // "use strict";
 
   function DynamicAdapt(type) {
     this.type = type;
@@ -260,13 +262,10 @@ $(function () {
 
   DynamicAdapt.prototype.init = function () {
     const _this = this;
-    // массив объектов
     this.оbjects = [];
     this.daClassname = "_dynamic_adapt_";
-    // массив DOM-элементов
     this.nodes = document.querySelectorAll("[data-da]");
 
-    // наполнение оbjects объктами
     for (let i = 0; i < this.nodes.length; i++) {
       const node = this.nodes[i];
       const data = node.dataset.da.trim();
@@ -283,7 +282,6 @@ $(function () {
 
     this.arraySort(this.оbjects);
 
-    // массив уникальных медиа-запросов
     this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
       return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
     }, this);
@@ -291,15 +289,12 @@ $(function () {
       return Array.prototype.indexOf.call(self, item) === index;
     });
 
-    // навешивание слушателя на медиа-запрос
-    // и вызов обработчика при первом запуске
     for (let i = 0; i < this.mediaQueries.length; i++) {
       const media = this.mediaQueries[i];
       const mediaSplit = String.prototype.split.call(media, ',');
       const matchMedia = window.matchMedia(mediaSplit[0]);
       const mediaBreakpoint = mediaSplit[1];
 
-      // массив объектов с подходящим брейкпоинтом
       const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
         return item.breakpoint === mediaBreakpoint;
       });
@@ -327,7 +322,6 @@ $(function () {
     }
   };
 
-  // Функция перемещения
   DynamicAdapt.prototype.moveTo = function (place, element, destination) {
     element.classList.add(this.daClassname);
     if (place === 'last' || place >= destination.children.length) {
@@ -341,7 +335,6 @@ $(function () {
     destination.children[place].insertAdjacentElement('beforebegin', element);
   }
 
-  // Функция возврата
   DynamicAdapt.prototype.moveBack = function (parent, element, index) {
     element.classList.remove(this.daClassname);
     if (parent.children[index] !== undefined) {
@@ -351,15 +344,11 @@ $(function () {
     }
   }
 
-  // Функция получения индекса внутри родителя
   DynamicAdapt.prototype.indexInParent = function (parent, element) {
     const array = Array.prototype.slice.call(parent.children);
     return Array.prototype.indexOf.call(array, element);
   };
 
-  // Функция сортировки массива по breakpoint и place 
-  // по возрастанию для this.type = min
-  // по убыванию для this.type = max
   DynamicAdapt.prototype.arraySort = function (arr) {
     if (this.type === "min") {
       Array.prototype.sort.call(arr, function (a, b) {

@@ -9,12 +9,10 @@
   <title>Document</title>
 </head>
 
-<body>
+<body class="body">
   @include('html/header.html')
   <main class="main">
-    <h1 class="sr-only">
-      Страница по демонтажным работам
-    </h1>
+    @include('html/hero.html')
     @include('html/calc-price.html')
     @include('html/services.html')
     @include('html/portfolio.html')

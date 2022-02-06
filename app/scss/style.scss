@@ -6,8 +6,7 @@
 @import 'libs';
 
 @import './components/header';
-@import './components/social';
-@import './components/modal';
+@import './components/hero';
 @import './components/calc-price';
 @import './components/services';
 @import './components/portfolio';
@@ -20,4 +19,7 @@
 @import './components/feedback';
 @import './components/footer';
 
-@import 'media';
+//small component 
+@import './components/social';
+@import './components/modal';
+@import './components/form';
