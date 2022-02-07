@@ -13,8 +13,8 @@
 
   &__title {
     text-align: start;
-    max-width: 55%;
-    transform: translateY(90%);
+    // max-width: 55%;
+    margin-bottom: 65px;
 
     span {
       text-transform: uppercase;
@@ -27,7 +27,6 @@
     @include tablet {
       max-width: 100%;
       text-align: center;
-      transform: translateY(0%);
       margin-bottom: 48px;
     }
 
@@ -42,10 +41,12 @@
   }
 
   &__left {
-    max-width: 510px;
+    max-width: 585px;
+    width: 50%;
     width: 100%;
     margin-right: 20px;
-    align-self: flex-end;
+    align-self: flex-start;
+
 
     @include tablet {
       max-width: 550px;
@@ -57,7 +58,6 @@
       max-width: 100%;
     }
   }
-
 
   &__сonsultation {
     padding: 70px 23px;

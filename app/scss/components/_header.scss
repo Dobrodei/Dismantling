@@ -3,6 +3,9 @@
   background-position: bottom center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
 
   &__top {
     display: flex;
@@ -152,7 +155,7 @@
   }
 
   &__bottom {
-    background-color: $color-dark;
+    background-color: rgba($color-white, 0.7)
   }
 }
 
@@ -225,6 +228,11 @@
     padding-left: 12px;
     border: 1px solid transparent;
     text-transform: uppercase;
+    transition: border-color 0.3s ease;
+
+    &:hover {
+      border-color: $color-orange;
+    }
 
     &--active {
       border-color: $color-orange;
@@ -313,7 +321,7 @@
     display: inline-block;
     padding: 10px;
     padding-right: 22px;
-    color: $color-white;
+    color: $color-dark;
     position: relative;
 
     &:not(:last-child) {
@@ -321,7 +329,7 @@
         content: "";
         width: 1px;
         height: 100%;
-        background-color: $color-white;
+        background-color: $color-dark;
         position: absolute;
         right: 0;
         height: 15px;
@@ -358,7 +366,7 @@
   position: absolute;
   z-index: 20;
   padding: 21px 27px;
-  border-top: 2px solid $color-orange;
+  border-top: 3px solid $color-orange;
   background-color: $color-dark;
   opacity: 0;
   visibility: hidden;

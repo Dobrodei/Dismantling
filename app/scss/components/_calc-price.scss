@@ -205,6 +205,7 @@
       right: 20px;
       background-image: url('../images/icons/calc-arrowl.svg');
       animation: animation2 1s linear infinite;
+      background-color: transparent;
     }
 
     @include tablet {

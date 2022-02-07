@@ -1,4 +1,8 @@
 $(function () {
+  let inputs = document.querySelectorAll('input[type="tel"]');
+  let im = new Inputmask('+7 (999) 999-99-99');
+  im.mask(inputs);
+
   $('.nav__link--menu').on('click', function (e) {
     e.preventDefault
     $('.submenu__list').toggleClass('submenu__list--active')
@@ -8,6 +12,11 @@ $(function () {
     el.addEventListener('click', () => {
       el.nextElementSibling.classList.toggle('dropdown--active')
     })
+  })
+
+  $('.fixed-menu__btn').on('click', function (el) {
+    $('.fixed-menu__btn').toggleClass('fixed-menu__btn--active')
+    $('.fixed-menu__inner').toggleClass('fixed-menu__inner--visible')
   })
 
   const headers = document.querySelectorAll(".faq__head");
@@ -48,6 +57,9 @@ $(function () {
       spaceBetween: 5,
       watchSlidesProgress: true,
       updateOnWindowResize: !0,
+      autoplay: {
+        delay: 5000,
+      },
       navigation: {
         nextEl: "[data-work-example] .swiper-button-next",
         prevEl: "[data-work-example] .swiper-button-prev",
