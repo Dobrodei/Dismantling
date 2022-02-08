@@ -84,6 +84,10 @@
     }
   }
 
+  &__container {
+    position: relative;
+  }
+
   &__item {
     width: 100%;
     display: none;

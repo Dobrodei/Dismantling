@@ -316,6 +316,7 @@
       position: absolute;
       top: 13px;
       margin-left: -20px;
+      animation: blink 1.5s ease-in 1s infinite;
     }
 
     @include small-tablet {

@@ -119,6 +119,7 @@
       position: absolute;
       left: 0;
       top: 3px;
+      animation: blink 1.5s ease-in 1s infinite;
 
       @include tablet {
         width: 4px;
@@ -129,6 +130,16 @@
     @include small-tablet {
       padding-left: 10px;
       font-size: 9px;
+    }
+
+    @keyframes blink {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
   }
 

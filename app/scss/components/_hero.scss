@@ -259,4 +259,8 @@
     max-width: 100%;
     font-weight: 600;
   }
+
+  @include small-tablet {
+    padding-top: 155px;
+  }
 }
