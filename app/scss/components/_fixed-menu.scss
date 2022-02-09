@@ -1,24 +1,16 @@
 .fixed-menu {
   position: fixed;
   right: 0;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   z-index: 99;
 
   &__btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 2px solid rgba($color-orange, 0.7);
     background-color: $color-orange;
-    background-image: url('../images/icons/down.svg');
-    background-size: 32px;
-    background-image: none;
-    background-position: center;
-    background-repeat: no-repeat;
     position: absolute;
     transform: rotate(45deg);
     top: -50px;
@@ -32,10 +24,17 @@
       border-radius: 3px;
       background-color: $color-white;
       position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &::before {
+      transform: translateX(-50%) rotate(134deg);
     }
 
     &::after {
-      transform: rotate(90deg);
+      transform: translateX(-50%) rotate(43deg);
     }
 
     &--active {
@@ -100,6 +99,8 @@
     }
 
     @include mobile {
+      width: 25px;
+      font-size: 0;
       padding-top: 30px;
       background-size: 21px;
     }

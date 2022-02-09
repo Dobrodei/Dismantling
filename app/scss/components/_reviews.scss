@@ -20,7 +20,7 @@
   }
 
   &__title {
-    max-width: 640px;
+    max-width: 685px;
     font-size: 44px;
     line-height: 1.3;
     text-align: left;
@@ -252,7 +252,7 @@
     }
 
     @include large {
-      right: -1%
+      right: 0%
     }
 
     @include small-tablet {

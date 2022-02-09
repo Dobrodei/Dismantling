@@ -153,7 +153,7 @@ $(function () {
         $(".portfolio__subtitle").text(t),
         $("[data-total] span").text(r),
         $("[data-day] span").text(i);
-      for (let e = 0; e < a.length; e++) $(n[e]).attr("href", a[e]), $(n[e]).find("img").attr("src", a[e]);
+      for (let e = 0; e < a.length; e++) $(n[e]).find("a").attr("href", h), $(n[e]).find("img").attr("src", a[e]);
     });
   }
 
@@ -217,6 +217,7 @@ $(function () {
 
   $('.modal-toggle').on('click', function (e) {
     e.preventDefault();
+    $('.body').toggleClass('body--hidden')
     $('.modal').toggleClass('modal--visible');
   });
 

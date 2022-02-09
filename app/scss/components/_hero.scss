@@ -240,27 +240,12 @@
     margin-bottom: 20px;
   }
 
-  .form__checkbox {
-    top: 0px;
-    left: -14px;
-
-    @include small-tablet {
-      top: -1px;
-    }
-  }
-
-  .form__text {
-    @include small-tablet {
-      padding-left: 0;
-    }
-  }
-
   .form__contacts {
     max-width: 100%;
     font-weight: 600;
   }
 
   @include small-tablet {
-    padding-top: 155px;
+    padding-top: 115px;
   }
 }

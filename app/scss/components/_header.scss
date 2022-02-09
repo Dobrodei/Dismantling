@@ -1,8 +1,6 @@
 .header {
   color: $color-white;
-  background-position: bottom center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(180deg, rgba(3, 3, 3, 0.8) 12.9%, rgba(10, 10, 10, 0.8) 17.09%, rgba(222, 134, 67, 0.8) 100%);
   position: absolute;
   left: 0;
   right: 0;
@@ -13,6 +11,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 22px 0;
+
+    @include small-tablet {
+      padding: 10px 0;
+    }
   }
 
   &__inner {
@@ -33,6 +35,11 @@
 
   &__logo {
     margin-right: 15px;
+
+    @include small-tablet {
+      max-width: 120px;
+      height: 50px;
+    }
   }
 
   &__descr {
@@ -51,10 +58,13 @@
 
     @include small-tablet {
       font-size: 14px;
+      padding: 12px;
     }
   }
 
   .social {
+    margin: 10px 0;
+
     &__item:last-child {
       display: none;
 
@@ -107,7 +117,6 @@
 
     @include small-tablet {
       display: flex;
-
     }
   }
 
@@ -176,8 +185,8 @@
   display: none;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 30px;
+  width: 30px;
+  height: 20px;
   position: relative;
   z-index: 9999;
 
@@ -190,6 +199,9 @@
     border-radius: 4px;
     background-color: $color-white;
     position: absolute;
+    transition: transform 0.3s ease-in;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   &::before {
@@ -200,26 +212,24 @@
     bottom: 0;
   }
 
-  @include small-tablet {
-    display: flex;
-  }
-
   &--active {
     span {
-      left: 50%;
       top: 50%;
-      transform: translate(-50%, 50%) rotate(132deg);
+      transform: translate(-50%, -50%) rotate(-230deg);
     }
 
     &::before {
       top: 50%;
-      left: 50%;
-      transform: translate(-50%, 50%) rotate(47deg);
+      transform: translate(-50%, -50%) rotate(47deg);
     }
 
     &::after {
       opacity: 0;
     }
+  }
+
+  @include small-tablet {
+    display: flex;
   }
 }
 
@@ -287,10 +297,6 @@
   }
 }
 
-.social {
-  margin: 10px 0;
-}
-
 .submenu {
   &__list {
     display: flex;
@@ -330,10 +336,10 @@
   }
 
   &__btn {
-    font-size: 11px;
+    font-size: 10px;
     display: inline-block;
-    padding: 17px 10px;
-    padding-right: 22px;
+    padding: 17px 8px;
+    padding-right: 19px;
     color: $color-white;
     position: relative;
 
@@ -355,6 +361,7 @@
       }
 
       @include small-tablet {
+        padding: 10px 19px;
         padding-left: 0;
       }
     }
@@ -368,8 +375,9 @@
       background-position: center;
       background-repeat: no-repeat;
       position: absolute;
-      top: 18px;
-      right: 7px;
+      top: 52%;
+      transform: translateY(-50%);
+      right: 6px;
       transition: transform 0.3s ease-in;
     }
   }
@@ -440,7 +448,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: hsla(0, 0%, 0%, 0.5);
+    background-color: rgba($color-dark, 0.5);
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 0.3s, opacity 0.3s;
@@ -466,34 +474,6 @@
     overflow: auto;
   }
 
-  &__header {
-    position: relative;
-  }
-
-  &__close {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 7%;
-    right: -140px;
-
-    &:hover {
-      color: #777;
-    }
-
-    &::after {
-      content: "";
-      width: 34px;
-      height: 34px;
-      background-image: url('../images/icons/close.svg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-  }
 
   .modal-transition {
     transition: all 0.3s 0.12s;

@@ -2,7 +2,7 @@
   padding-top: 30px;
 
   &__title {
-    max-width: 930px;
+    max-width: 985px;
     margin: 0 auto;
     margin-bottom: 90px;
 
@@ -108,7 +108,7 @@
   }
 
   &__text {
-    max-width: 410px;
+    max-width: 420px;
     font-size: 34px;
     font-weight: 500;
     line-height: 41px;
@@ -175,7 +175,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 459px;
+    max-width: 510px;
     padding: 20px;
     font-weight: 500;
     font-size: 28px;
@@ -186,6 +186,10 @@
 
     @include small-tablet {
       font-size: 16px;
+    }
+
+    @include mobile {
+      padding: 7px;
     }
   }
 }
@@ -212,6 +216,7 @@
 
   &--left {
     margin-right: 10px;
+    justify-content: flex-start;
 
     span {
       animation: arrow-left 1.5s infinite;
@@ -228,6 +233,7 @@
 
   &--right {
     margin-left: 10px;
+    justify-content: flex-end;
 
     span {
       animation: arrow-right 1.5s infinite;

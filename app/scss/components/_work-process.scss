@@ -129,7 +129,7 @@
   }
 
   &__text {
-    max-width: 420px;
+    max-width: 485px;
     margin-bottom: 20px;
     font-weight: 500;
     font-size: 24px;
@@ -280,6 +280,16 @@
 
     @include small-tablet {
       right: -23px;
+    }
+  }
+
+  &__modal {
+    visibility: hidden;
+
+    .modal__wrapper {
+      @include tablet {
+        max-width: 450px;
+      }
     }
   }
 
