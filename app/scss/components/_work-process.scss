@@ -4,16 +4,7 @@
   &__title {
     margin-bottom: 30px;
 
-    @include tablet {
-      font-size: 38px;
-    }
-
-    @include small-tablet {
-      font-size: 20px;
-    }
-
     @include mobile {
-      font-size: 18px;
       margin-bottom: 15px;
     }
   }

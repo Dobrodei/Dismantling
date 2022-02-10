@@ -1,4 +1,5 @@
 $(function () {
+
   let navBar = $('.header__bottom');
   let navPos = navBar.offset().top;
   $(window).scroll(function () {
@@ -15,9 +16,12 @@ $(function () {
   im.mask(inputs);
 
   $('.nav__link--menu').on('click', function (e) {
-    e.preventDefault
+    if ($(window).width() <= '768') {
+      e.preventDefault()
+    }
     $('.submenu__list').toggleClass('submenu__list--active')
   })
+
   const submenuBtn = document.querySelectorAll('.submenu__btn')
   submenuBtn.forEach((el) => {
     el.addEventListener('click', () => {
@@ -252,14 +256,15 @@ $(function () {
       swiper: sliderThumbs
     }
   });
+
   let otherJob = document.querySelectorAll('.other-job__item');
-  otherJob.forEach(function (n) {
-    var mySwiper = new Swiper(n.querySelector('.swiper'), {
+  otherJob.forEach(function (el) {
+    const mySwiper = new Swiper(el.querySelector('.swiper'), {
       slidesPerView: 4,
       spaceBetween: 10,
       navigation: {
-        nextEl: ('.swiper-button-next'),
-        prevEl: ('.swiper-button-prev'),
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
       breakpoints: {
         320: {

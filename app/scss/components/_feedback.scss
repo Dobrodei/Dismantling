@@ -56,7 +56,7 @@
 
     @include mobile {
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 174px;
     }
   }
@@ -73,7 +73,7 @@
     }
 
     @include mobile {
-      max-width: 210px;
+      max-width: 100%;
       margin-right: 0;
       margin-bottom: 15px;
     }
@@ -157,6 +157,7 @@
 
     @include mobile {
       align-self: center;
+      max-width: 100%;
     }
   }
 
@@ -202,7 +203,7 @@
     @include mobile {
       max-width: 146px;
       height: 187px;
-      top: 31%;
+      top: 30%;
       left: 56%;
       transform: translateX(-50%);
     }

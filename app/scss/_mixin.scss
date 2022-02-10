@@ -4,7 +4,6 @@
     src: url('../fonts/#{$url}.woff') format("woff");
     font-weight: #{$weight};
     font-display: swap;
-    // font-style: $style;
   }
 }
 
@@ -14,7 +13,6 @@
     src: url('../fonts/#{$url}.woff2') format("woff2");
     font-weight: #{$weight};
     font-display: swap;
-    // font-style: $style;
   }
 }
 

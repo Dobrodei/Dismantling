@@ -6,20 +6,20 @@
     margin: 0 auto;
     margin-bottom: 90px;
 
+    span {
+      margin-top: 10px;
+    }
+
     @include large {
-      font-size: 52px;
       margin-bottom: 142px;
     }
 
     @include tablet {
-      font-size: 38px;
       margin-bottom: 174px;
     }
 
     @include small-tablet {
-      font-size: 18px;
-      margin-bottom: 107px;
-      margin-bottom: 110px;
+      margin-bottom: 90px;
     }
   }
 
