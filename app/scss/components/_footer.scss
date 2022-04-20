@@ -93,7 +93,7 @@
       justify-content: space-between;
     }
 
-    @include small-tablet {
+    @include mobile {
       grid-template-columns: repeat(2, auto);
     }
 
@@ -104,7 +104,7 @@
 
   &__inner {
     &:last-child {
-      @include small-tablet {
+      @include mobile {
         grid-column: span 2;
       }
     }
@@ -178,14 +178,14 @@
       &:not(:last-child) {
         margin-bottom: 16px;
 
-        @include small-tablet {
+        @include mobile {
           display: none;
         }
       }
     }
 
     .footer__head {
-      @include small-tablet {
+      @include mobile {
         display: none;
       }
     }

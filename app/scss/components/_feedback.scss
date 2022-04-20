@@ -50,30 +50,23 @@
     @include tablet {
       max-width: 100%;
       flex-direction: row;
-      margin-bottom: 63px;
+      margin-bottom: 50px;
       margin-right: 0;
     }
 
     @include mobile {
       flex-direction: column;
       align-items: flex-start;
-      margin-bottom: 174px;
+      margin-bottom: 10px;
     }
   }
 
   &__box {
     @include tablet {
-      max-width: 300px;
-      margin-right: 20px;
-    }
-
-    @include small-tablet {
-      max-width: 210px;
       margin-right: 20px;
     }
 
     @include mobile {
-      max-width: 100%;
       margin-right: 0;
       margin-bottom: 15px;
     }
@@ -142,22 +135,27 @@
     background-position: left center;
     background-size: 12px 8px;
     background-repeat: no-repeat;
+  }
 
-    @include small-tablet {
-      font-size: 8px;
+  &__inner {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include mobile {
+      align-items: center;
+      flex-direction: column-reverse;
     }
   }
 
   &__right {
     max-width: 420px;
 
-    @include small-tablet {
-      max-width: 220px;
-    }
-
-    @include mobile {
-      align-self: center;
-      max-width: 100%;
+    @include tablet {
+      flex-basis: 50%;
+      margin-right: 20px;
     }
   }
 
@@ -179,59 +177,43 @@
     bottom: 0;
     z-index: -1;
 
-    @include large {
-      width: 27%;
-      top: 37%;
-      right: 0%;
-    }
-
     @include tablet {
-      width: 35%;
-      top: 41%;
-      right: 4%;
-      bottom: 4%;
-    }
-
-    @include small-tablet {
-      max-width: 235px;
-      width: 100%;
-      height: 289px;
-      right: 0%;
-      top: 47%;
+      width: auto;
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      flex-basis: 50%;
+      align-self: flex-end;
     }
 
     @include mobile {
-      max-width: 146px;
-      height: 187px;
-      top: 30%;
-      left: 56%;
-      transform: translateX(-50%);
+      align-self: center;
     }
   }
 
   &__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    @include mobile {
+      height: 200px;
+    }
   }
 
   &__name {
     display: inline-block;
-    max-width: 285px;
+    max-width: 265px;
     padding: 10px;
     text-align: center;
     border-radius: 30px;
     background-color: $color-white;
-    margin-bottom: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 10px;
 
     span {
       display: block;
@@ -249,24 +231,18 @@
       }
     }
 
-    @include large {
-      font-size: 12px;
-      margin-bottom: 0;
-    }
-
     @include small-tablet {
-      max-width: 170px;
       font-size: 8px;
-      margin: 0 auto;
     }
 
     @include mobile {
-      max-width: 125px;
-      text-align: start;
+      top: 15%;
+      bottom: auto;
+      left: -30%;
+      max-width: 120px;
+      padding: 0;
       background-color: transparent;
-      position: absolute;
-      top: 24px;
-      left: -80px;
+      text-align: left;
     }
   }
 }

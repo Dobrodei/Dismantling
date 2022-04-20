@@ -237,7 +237,7 @@
 
     @include mobile {
       min-height: 80px;
-      background-size: 36% 48%;
+      background-size: 30%;
     }
   }
 
@@ -277,10 +277,18 @@
   &__modal {
     visibility: hidden;
 
+    .modal {
+      // justify-content: initial;
+      // align-items: initial;
+    }
+
     .modal__wrapper {
-      @include tablet {
-        max-width: 450px;
-      }
+      // max-width: 100%;
+      // margin: 0 auto;
+      // padding: 40px 0;
+      // @include tablet {
+      //   max-width: 450px;
+      // }
     }
   }
 

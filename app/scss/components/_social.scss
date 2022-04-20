@@ -40,13 +40,13 @@
 
   &--footer {
     .social__item {
-      @include small-tablet {
+      @include mobile {
         margin-right: 0;
         margin-bottom: 15px;
       }
     }
 
-    @include small-tablet {
+    @include mobile {
       flex-direction: column;
     }
   }

@@ -58,10 +58,8 @@
       content: "";
       width: 50px;
       height: 50px;
-      background-image: url('../images/icons/decor-hero.svg');
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: center;
+      border-left: 3px solid $color-orange;
+      border-top: 3px solid $color-orange;
       position: absolute;
 
       @include small-tablet {
@@ -71,8 +69,8 @@
     }
 
     &::before {
-      top: -8px;
-      left: -15px
+      top: -10px;
+      left: -10px;
     }
 
     &::after {
@@ -118,12 +116,12 @@
     @include small-tablet {
       width: 100%;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
     }
 
     @include mobile {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
     }
   }
 
