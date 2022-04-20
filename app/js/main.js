@@ -219,17 +219,29 @@ $(function () {
     }
   });
 
-  $('.modal-toggle').on('click', function (e) {
-    e.preventDefault();
-    $('.body').toggleClass('body--hidden')
-    $('.modal').toggleClass('modal--visible');
-  });
-
-  $('.toggle').on('click', function (e) {
-    $('.body').toggleClass('body--hidden')
-    $('.burger-btn').toggleClass('burger-btn--active')
+  $('.burger-btn').on('click', function () {
+    $(this).toggleClass('burger-btn--active');
     $('.header-menu').toggleClass('header-menu--visible');
-  });
+    $('.body').toggleClass('body--hidden');
+  })
+
+  $('.header-menu__overlay').on('click', function () {
+    $('.burger-btn').removeClass('burger-btn--active');
+    $('.header-menu').removeClass('header-menu--visible');
+    $('.body').removeClass('body--hidden');
+  })
+
+  $('.modal-toggle').on('click', function () {
+    $('.modal').toggleClass('modal--visible');
+    $('.body').toggleClass('body--hidden');
+  })
+
+  $('.modal').on('click', function (e) {
+    if ($(e.target).hasClass('modal__btn') || $(e.target).hasClass('modal')) {
+      $(this).removeClass('modal--visible');
+      $('.body').removeClass('body--hidden');
+    }
+  })
 
   const sliderThumbs = new Swiper('.slider__thumbs .swiper-container', {
     direction: 'vertical',

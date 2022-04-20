@@ -274,24 +274,6 @@
     }
   }
 
-  &__modal {
-    visibility: hidden;
-
-    .modal {
-      // justify-content: initial;
-      // align-items: initial;
-    }
-
-    .modal__wrapper {
-      // max-width: 100%;
-      // margin: 0 auto;
-      // padding: 40px 0;
-      // @include tablet {
-      //   max-width: 450px;
-      // }
-    }
-  }
-
   @include small-tablet {
     padding-top: 30px;
   }
